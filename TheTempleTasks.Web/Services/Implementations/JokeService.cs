@@ -15,7 +15,7 @@ namespace TheTempleTasks.Web.Services.Implementations
 
         public List<JokeWebDto> GetAllJokes()
         {
-            var jokes = _jokeContext.Jokes.ToList();
+            var jokes = _jokeContext.Jokes.Include(x=>x.Flags).ToList();
             var allJokes = jokes.Select(j => new JokeWebDto
             {
                 Category = j.Category,
@@ -25,15 +25,15 @@ namespace TheTempleTasks.Web.Services.Implementations
                 Id = j.Id,
                 Safe = j.Safe,
                 Lang = j.Lang,
-                //Flags = new FlagsDto
-                //{
-                //    Nsfw = j.Flags.Nsfw,
-                //    Religious = j.Flags.Religious,
-                //    Political = j.Flags.Political,
-                //    Racist = j.Flags.Racist,
-                //    Sexist = j.Flags.Sexist,
-                //    Explicit = j.Flags.Explicit
-                //}
+                Flags = new FlagsDto
+                {
+                    Nsfw = j.Flags.Nsfw,
+                    Religious = j.Flags.Religious,
+                    Political = j.Flags.Political,
+                    Racist = j.Flags.Racist,
+                    Sexist = j.Flags.Sexist,
+                    Explicit = j.Flags.Explicit
+                }
             }).ToList();
 
             return allJokes;

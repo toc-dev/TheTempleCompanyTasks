@@ -15,22 +15,25 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Id</th>
+
             <th>Type</th>
             <th>Setup</th>
             <th>Delivery</th>
+            <th>Category</th>
             <th>Safe</th>
+            <th>Language</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var joke in Model)
         {
             <tr>
-                <td>@joke.Id</td>
                 <td>@joke.Type</td>
                 <td>@joke.Setup</td>
                 <td>@joke.Delivery</td>
                 <td>@joke.Category</td>
+                <td>@joke.Safe</td>
+                <td>@joke.Lang</td>
             </tr>
         }
     </tbody>

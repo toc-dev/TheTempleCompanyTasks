@@ -47,7 +47,6 @@ namespace TheTempleCompanyTasks
             };
 
             var connectionString = ConfigurationManager.ConnectionStrings["JokesDB"].ConnectionString;
-                //@"Server=localhost;Database=JokesDB;Trusted_Connection=True; Encrypt=False; Integrated Security=true";
             var optionsBuilder = new DbContextOptionsBuilder<JokeContext>();
             optionsBuilder.UseSqlServer(connectionString);
             var options = optionsBuilder.Options;
