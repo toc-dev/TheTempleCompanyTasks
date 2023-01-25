@@ -21,8 +21,13 @@ namespace TheTempleCompanyTasks
 
         public JokeDto GetJoke()
         {
-            var response = _httpClient.GetAsync("https://sv443.net/jokeapi/v2/joke/Any").Result;
-            var joke = JsonConvert.DeserializeObject<JokeDto>(response.Content.ReadAsStringAsync().Result);
+            JokeDto joke = new();
+            var response = _httpClient.GetAsync(_jokeUrl).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                joke = JsonConvert.DeserializeObject<JokeDto>(response.Content.ReadAsStringAsync().Result);
+            }
+            
             return joke;
         }
     }

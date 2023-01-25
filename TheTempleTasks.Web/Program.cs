@@ -32,7 +32,7 @@ namespace TheTempleTasks.Web
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Jokes}/{action=GetJokes}/{id?}");
+                pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
         }
