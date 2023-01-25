@@ -12,8 +12,21 @@ namespace TheTempleTasks.Web.Controllers
         }
         public IActionResult GetJokes()
         {
-            var jokes = _jokeService.GetAllJokes();
-            return View(jokes);
+            try
+            {
+                var jokes = _jokeService.GetAllJokes();
+                if (jokes == null)
+                {
+                    ViewBag.Error = "No Jokes Found";
+                    return View();
+                }
+                return View(jokes);
+            }
+            catch (Exception ex)
+            {
+               ViewBag.Error = "An error occurred while processing your request: " + ex.Message;
+                return View();
+            }
         }
     }
 }

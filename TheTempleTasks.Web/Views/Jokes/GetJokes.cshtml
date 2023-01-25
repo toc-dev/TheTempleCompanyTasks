@@ -38,3 +38,10 @@
         }
     </tbody>
 </table>
+
+@if(ViewBag.Error != null)
+{
+     <div class="alert alert-danger">
+        @ViewBag.Error
+     </div>
+}
