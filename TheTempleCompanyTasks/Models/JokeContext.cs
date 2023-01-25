@@ -16,7 +16,6 @@ namespace TheTempleCompanyTasks.Console.Models
 
         }
         public DbSet<Joke> Jokes { get; set; }
-        //string connectionString = ConfigurationManager.ConnectionStrings["JokesDB"].ConnectionString;
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(connectionString);
