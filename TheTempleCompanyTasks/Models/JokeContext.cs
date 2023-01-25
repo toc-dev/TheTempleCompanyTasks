@@ -10,7 +10,9 @@ namespace TheTempleCompanyTasks.Console.Models
 {
     public class JokeContext : DbContext
     {
-        string connectionString = @"Server=localhost;Database=JokesDB;Trusted_Connection=True; Encrypt=False; Integrated Security=true";
+
+        //string connectionString = @"Server=localhost;Database=JokesDB;Trusted_Connection=True; Encrypt=False; Integrated Security=true";
+        //"Server=localhost;Database=JokesDB;Trusted_Connection=True; Integrated Security=true"
         public JokeContext(DbContextOptions<JokeContext> options) :base(options)
         {
 
@@ -18,7 +20,7 @@ namespace TheTempleCompanyTasks.Console.Models
         public DbSet<Joke> Jokes { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(connectionString);
+            //optionsBuilder.UseSqlServer(connectionString);
         }
     }
 }
