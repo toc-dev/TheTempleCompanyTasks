@@ -11,7 +11,7 @@ namespace TheTempleCompanyTasks
 {
     public class JokeAPIClient
     {
-        private readonly HttpClient _httpClient = new HttpClient();
+        private readonly HttpClient _httpClient;
         private readonly string _jokeUrl;
         public JokeAPIClient(HttpClient httpClient)
         {
