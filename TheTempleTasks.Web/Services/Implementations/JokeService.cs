@@ -27,6 +27,7 @@ namespace TheTempleTasks.Web.Services.Implementations
                 Lang = j.Lang,
                 Flags = new FlagsDto
                 {
+                    if(j.Flags != null)
                     Nsfw = j.Flags.Nsfw,
                     Religious = j.Flags.Religious,
                     Political = j.Flags.Political,
